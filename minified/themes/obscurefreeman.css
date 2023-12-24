@@ -178,10 +178,10 @@ div.sceditor-grip {
 .sceditor-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    background: #fff;
+    /* background: #fff; */
     background-clip: padding-box;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    /* border: 1px solid #d9d9d9; */
+    border-radius: 8px;
     color: #333;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -193,8 +193,15 @@ div.sceditor-grip {
     font-weight: 700;
     height: 250px;
     line-height: 1;
-    position: relative
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.016);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow:inset 0 0 8px rgba(32, 37, 32, 0.2);
+    cursor: pointer;
 }
+
+
 
 .sceditor-container *,
 .sceditor-container :after,
@@ -215,9 +222,9 @@ div.sceditor-dropdown div {
 .sceditor-container iframe,
 .sceditor-container textarea {
     -webkit-box-flex: 1;
-    background: #fff;
+    background: #22272400;
     border: 0;
-    color: #111;
+    color: #ffffff;
     display: block;
     -ms-flex: 1 1 0%;
     flex: 1 1 0%;
@@ -230,12 +237,18 @@ div.sceditor-dropdown div {
     outline: none;
     padding: 0;
     resize: none;
-    width: auto !important;
-    width: calc(100% - 10px) !important
+    /* width: auto !important; */
+    /* width: calc(100% - 10px) !important */
 }
 
 .sceditor-container textarea {
-    margin: 7px 5px
+    margin: 20px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sceditor-container textarea::-webkit-scrollbar {
+    display: none;
 }
 
 div.sceditor-dnd-cover {
@@ -464,9 +477,9 @@ div.sceditor-more-emoticons {
 
 div.sceditor-toolbar {
     -ms-flex-negative: 0;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
     background-clip: padding-box;
-    border-bottom: 1px solid silver;
+    /* border-bottom: 1px solid silver; */
     border-radius: 3px 3px 0 0;
     flex-shrink: 0;
     line-height: 0;
@@ -608,18 +621,23 @@ div.sceditor-group {
 }
 
 div.sceditor-toolbar {
-    background: #5d5d5d
+    /* background: #5d5d5d */
 }
 
 div.sceditor-group {
-    background: #303030;
-    border-bottom: 1px solid #000
+    background-color: #5555554f;
+    /* border-bottom: 1px solid #000 */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .sceditor-button.active,
 .sceditor-button:active,
 .sceditor-button:hover {
-    background: #6b6b6b
+    background-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF50;
 }
 
 .sceditor-button svg {

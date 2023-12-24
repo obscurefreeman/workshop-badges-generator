@@ -19,6 +19,7 @@
             --size-sm: 16px;
             --color-green: #58DD93;
             --color-black: #000;
+            --colorhtml: #222724;
             }
             body {
                 /* background-color: #222; */
@@ -213,15 +214,9 @@
                 <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
                 <div class="output" id="outputURLs"></div>
                 <div class="editorcontainer">
-                    <textarea id="example" style="height:300px;width:800px;">[center][size=3][b]BBCode SCEditor[/b][/size][/center]
-        
-        Give it a try! :)
-        
-        [color=#ff00]Red text! [/color][color=#3399ff]Blue?[/color]
-        
-        [ul][li]A simple list[/li][li]list item 2[/li][/ul]
-        
-        Just type [b]:[/b]) and it should be converted into :) as you type.</textarea>
+                    <textarea id="example" style="height:800px;width:800px;">[center][size=5][b]来试试吧！[/b][/size][/center]
+
+[center][img]https://img.shields.io/steam/subscriptions/3069601093?style=for-the-badge&label=订阅&color=b4e419[/img][img]https://img.shields.io/steam/downloads/3069601093?style=for-the-badge&label=下载&color=00adb5[/img][img]https://img.shields.io/steam/views/3069601093?style=for-the-badge&label=浏览量&color=ff5719[/img][img]https://img.shields.io/steam/size/3069601093?style=for-the-badge&label=模组大小&color=2ea043[/img][img]https://img.shields.io/steam/release-date/3069601093?style=for-the-badge&label=发布日期&color=ffb300[/img][img]https://img.shields.io/steam/update-date/3069601093?style=for-the-badge&label=更新日期&color=9999ff[/img][/center]</textarea>
         
                 </div>
                 <div style="height: 50px;"></div> <!-- 调整所需的距离 -->
@@ -237,7 +232,7 @@
 			sceditor.create(textarea, {
 				format: 'bbcode',
 				icons: 'monocons',
-				style: 'minified/themes/content/default.css'
+				style: 'minified/themes/content/obscurefreeman.css'
 			});
 		</script>
 
