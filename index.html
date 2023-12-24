@@ -44,15 +44,48 @@
             padding: 10px;
             font-size: 16px;
             width: 300px;
+            background-color: #3333333e;
+            border: none;
+            border-radius: 8px;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            box-shadow:inset 0 0 2px rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
         
         .button {
+            margin: 1px;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #555;
+            background-color: #5555554f;
             color: #fff;
             border: none;
+            border-radius: 8px;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #4CAF50;
+            box-shadow: 0 0 10px #4CAF50;
+        }
+
+        .button:active {
+            animation: buttonClickAnimation 0.3s;
+        }
+
+        @keyframes buttonClickAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         
         .output {
@@ -85,22 +118,54 @@
             margin-top: 10px;
             padding: 5px 10px;
             font-size: 14px;
-            background-color: #555;
+            background-color: #5555554f;
             color: #fff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background-color: #3b34c6;
+            box-shadow: 0 0 10px #3b34c6;
+        }
+
+        .copy-button:active {
+            animation: buttonClickAnimation 0.3s;
         }
 
         .copy-all-button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 14px;
-            background-color: #555;
+            /* position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999; */
+            /* margin-top: 10px; */
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            font-size: 20px;
+            background-color: #5555554f;
             color: #ffffff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .copy-all-button:hover {
+            background-color: #ff4400;
+            box-shadow: 0 0 10px #ff4400;
+        }
+
+        .copy-all-button:active {
+            animation: buttonClickAnimation 0.3s;
         }
         
         .preview {
@@ -121,11 +186,10 @@
             <h1>创意工坊动态徽标生成器</h1>
             <p>这个网站可以通过shields.io生成动态徽标，显示创意工坊物品的信息。</p>
             <p>你可以复制其BBCode粘贴至创意工坊简介，或者用Markdown嵌入到你的博客里。</p>
-            <input type="text" class="input" id="inputText" placeholder="请输入你的创意工坊物品ID">
+            <input type="text" class="input" id="inputText" placeholder="请输入创意工坊物品ID或URL">
             <button class="button" onclick="generateURLs('bbcode')">生成BBCode</button>
             <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
             <div class="output" id="outputURLs"></div>
-            <button class="copy-all-button" onclick="copyAllToClipboard()">全部复制</button>
         </div>
     </div>
 
@@ -144,7 +208,7 @@
             id = inputText.replace("https://steamcommunity.com/sharedfiles/filedetails/?id=", "");
             } else {
             // 输入格式不正确，给出错误提示
-            alert("输入格式不正确，请输入正确的ID或URL！");
+            alert("请填写正确的ID或URL！");
             return;
             }
 
@@ -201,7 +265,14 @@
             var urlContainer4 = createURLContainer(size, url4);
             var urlContainer5 = createURLContainer(releasedate, url5);
             var urlContainer6 = createURLContainer(updatedate, url6);
+            var copyAllButton = document.createElement("button");
+            copyAllButton.className = "copy-all-button";
+            copyAllButton.innerHTML = "复制全部";
+            copyAllButton.addEventListener("click", function() {
+                copyAllToClipboard();
+            });
             
+            outputURLs.appendChild(copyAllButton);
             outputURLs.appendChild(urlContainer1);
             outputURLs.appendChild(urlContainer2);
             outputURLs.appendChild(urlContainer3);
