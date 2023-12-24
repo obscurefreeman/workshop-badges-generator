@@ -131,14 +131,30 @@
 
     <script>
         function generateURLs(format) {
+            
             var inputText = document.getElementById("inputText").value;
+
+            // 判断用户输入的是ID还是URL
+            var id;
+            if (/^\d+$/.test(inputText)) {
+            // 用户输入的是纯数字，表示ID
+            id = inputText;
+            } else if (inputText.startsWith("https://steamcommunity.com/sharedfiles/filedetails/?id=")) {
+            // 用户输入的是URL，提取其中的ID
+            id = inputText.replace("https://steamcommunity.com/sharedfiles/filedetails/?id=", "");
+            } else {
+            // 输入格式不正确，给出错误提示
+            alert("输入格式不正确，请输入正确的ID或URL！");
+            return;
+            }
+
             var outputURLs = document.getElementById("outputURLs");
-            var subscriptions = `https://img.shields.io/steam/subscriptions/${inputText}?style=for-the-badge&label=订阅&color=b4e419`;
-            var downloads = `https://img.shields.io/steam/downloads/${inputText}?style=for-the-badge&label=下载&color=00adb5`;
-            var views = `https://img.shields.io/steam/views/${inputText}?style=for-the-badge&label=浏览量&color=ff5719`;
-            var size = `https://img.shields.io/steam/size/${inputText}?style=for-the-badge&label=模组大小&color=2ea043`;
-            var releasedate = `https://img.shields.io/steam/release-date/${inputText}?style=for-the-badge&label=发布日期&color=ffb300`;
-            var updatedate = `https://img.shields.io/steam/update-date/${inputText}?style=for-the-badge&label=更新日期&color=9999ff`;
+            var subscriptions = `https://img.shields.io/steam/subscriptions/${id}?style=for-the-badge&label=订阅&color=b4e419`;
+            var downloads = `https://img.shields.io/steam/downloads/${id}?style=for-the-badge&label=下载&color=00adb5`;
+            var views = `https://img.shields.io/steam/views/${id}?style=for-the-badge&label=浏览量&color=ff5719`;
+            var size = `https://img.shields.io/steam/size/${id}?style=for-the-badge&label=模组大小&color=2ea043`;
+            var releasedate = `https://img.shields.io/steam/release-date/${id}?style=for-the-badge&label=发布日期&color=ffb300`;
+            var updatedate = `https://img.shields.io/steam/update-date/${id}?style=for-the-badge&label=更新日期&color=9999ff`;
             
             // 生成URLs
             var url1 = format === "bbcode" ? `[img]${subscriptions}[/img]` : `![订阅](${subscriptions})`;
@@ -205,16 +221,19 @@
         }
 
         function copyAllToClipboard() {
-            var urls = document.getElementsByClassName("url");
-            var allURLs = "";
-            
-            for (var i = 0; i < urls.length; i++) {
-                allURLs += urls[i].innerHTML + "\n";
-            }
-            
-            copyToClipboard(allURLs);
+            var urls = document.querySelectorAll(".url");
+            var urlsText = "";
+            urls.forEach(function(url) {
+                urlsText += url.innerHTML.replace(/&amp;/g, "&") + "\n";
+            });
+            var tempInput = document.createElement("textarea");
+            tempInput.value = urlsText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("已复制所有URL到剪贴板！");
         }
-
     </script>
 </body>
 </html>
