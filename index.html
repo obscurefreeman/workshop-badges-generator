@@ -179,10 +179,22 @@
                 max-height: 200px;
             }
         </style>
-        <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/jquery.wysibb.min.js"></script>
-        <link rel="stylesheet" href="/assets/css/wbbtheme.css" />
-        <script src="/assets/js/cn.js"></script>
+        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/jquery.min.js"></script>
+        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/jquery.wysibb.min.js"></script>
+        <link rel="stylesheet" href="https://obscurefreeman.github.io/workshop-badges-generator/assets/css/wbbtheme.css" />
+        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/cn.js"></script>
+
+        <script>
+            $(document).ready(function() {
+            var wbbOpt = {
+                lang : 	 "cn",
+                buttons: "bold,italic,underline,|,img,link,|,code,quote"
+            }
+            $("#editor").wysibb(wbbOpt);
+            });
+        </script>
+
+
     </head>
     <body>
         <div class="container">
@@ -309,14 +321,6 @@
                 document.body.removeChild(tempInput);
                 alert("已复制所有URL到剪贴板！");
             }
-
-            $(document).ready(function() {
-            var wbbOpt = {
-                lang : 	 "cn",
-                buttons: "bold,italic,underline,|,img,link,|,code,quote"
-            }
-            $("#editor").wysibb(wbbOpt);
-            });
 
         </script>
     </body>
