@@ -1,310 +1,323 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>创意工坊徽标生成器</title>
-    <link rel="shortcut icon" href="assets/favicon.svg" >
-    <style>
-        
-        :root {
-        --size-default: 22px;
-        --size-sm: 16px;
-        --color-green: #58DD93;
-        --color-black: #000;
-        }
-        body {
-            /* background-color: #222; */
-            background: 
-                linear-gradient(
-                    to bottom,
-                    rgba(0,0,0,0) 0%,
-                    var(--color-black) 100%
-                ),
-                radial-gradient(
-                    circle at 50% -50%,
-                    #335F4B 0%,
-                    var(--color-black) 100%
-                );
-            background-attachment: fixed;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .form {
-            text-align: center;
-        }
-        
-        .input {
-            padding: 10px;
-            font-size: 16px;
-            width: 300px;
-            background-color: #3333333e;
-            border: none;
-            border-radius: 8px;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow:inset 0 0 2px rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-        
-        .button {
-            margin: 1px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #5555554f;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: #4CAF50;
-            box-shadow: 0 0 10px #4CAF50;
-        }
-
-        .button:active {
-            animation: buttonClickAnimation 0.3s;
-        }
-
-        @keyframes buttonClickAnimation {
-            0% {
-                transform: scale(1);
+    <head>
+        <title>创意工坊徽标生成器</title>
+        <link rel="shortcut icon" href="assets/favicon.svg" >
+        <style>
+            
+            :root {
+            --size-default: 22px;
+            --size-sm: 16px;
+            --color-green: #58DD93;
+            --color-black: #000;
             }
-            50% {
-                transform: scale(0.9);
+            body {
+                /* background-color: #222; */
+                background: 
+                    linear-gradient(
+                        to bottom,
+                        rgba(0,0,0,0) 0%,
+                        var(--color-black) 100%
+                    ),
+                    radial-gradient(
+                        circle at 50% -50%,
+                        #335F4B 0%,
+                        var(--color-black) 100%
+                    );
+                background-attachment: fixed;
+                color: #fff;
+                font-family: Arial, sans-serif;
             }
-            100% {
-                transform: scale(1);
+            
+            .container {
+                /* display: flex; */
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
             }
-        }
-        
-        .output {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        
-        .url-container {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .url {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #3333333e;
-            color: #fff;
-            width: 500px;
-            word-wrap: break-word;
-            border: none;
-            border-radius: 8px;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow:inset 0 0 2px rgba(255, 255, 255, 0.2);
-        }
-        
-        .copy-button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 14px;
-            background-color: #5555554f;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
+            
+            .form {
+                text-align: center;
+            }
+            
+            .input {
+                padding: 10px;
+                font-size: 16px;
+                width: 300px;
+                background-color: #3333333e;
+                border: none;
+                border-radius: 8px;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 2px rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            
+            .button {
+                margin: 1px;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #5555554f;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
 
-        .copy-button:hover {
-            background-color: #3b34c6;
-            box-shadow: 0 0 10px #3b34c6;
-        }
+            .button:hover {
+                background-color: #4CAF50;
+                box-shadow: 0 0 10px #4CAF50;
+            }
 
-        .copy-button:active {
-            animation: buttonClickAnimation 0.3s;
-        }
+            .button:active {
+                animation: buttonClickAnimation 0.3s;
+            }
 
-        .copy-all-button {
-            /* position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9999; */
-            /* margin-top: 10px; */
-            margin-bottom: 10px;
-            padding: 10px 15px;
-            font-size: 20px;
-            background-color: #5555554f;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
+            @keyframes buttonClickAnimation {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(0.9);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            
+            .output {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+            
+            .url-container {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .url {
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #3333333e;
+                color: #fff;
+                width: 500px;
+                word-wrap: break-word;
+                border: none;
+                border-radius: 8px;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 2px rgba(255, 255, 255, 0.2);
+            }
+            
+            .copy-button {
+                margin-top: 10px;
+                padding: 5px 10px;
+                font-size: 14px;
+                background-color: #5555554f;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
 
-        .copy-all-button:hover {
-            background-color: #ff4400;
-            box-shadow: 0 0 10px #ff4400;
-        }
+            .copy-button:hover {
+                background-color: #3b34c6;
+                box-shadow: 0 0 10px #3b34c6;
+            }
 
-        .copy-all-button:active {
-            animation: buttonClickAnimation 0.3s;
-        }
-        
-        .preview {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .preview img {
-            max-width: 100%;
-            max-height: 200px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="form">
-            <h1>创意工坊动态徽标生成器</h1>
-            <p>这个网站可以通过shields.io生成动态徽标，显示创意工坊物品的信息。</p>
-            <p>你可以复制其BBCode粘贴至创意工坊简介，或者用Markdown嵌入到你的博客里。</p>
-            <input type="text" class="input" id="inputText" placeholder="请输入创意工坊物品ID或URL">
-            <button class="button" onclick="generateURLs('bbcode')">生成BBCode</button>
-            <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
-            <div class="output" id="outputURLs"></div>
+            .copy-button:active {
+                animation: buttonClickAnimation 0.3s;
+            }
+
+            .copy-all-button {
+                /* position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 9999; */
+                /* margin-top: 10px; */
+                margin-bottom: 10px;
+                padding: 10px 15px;
+                font-size: 20px;
+                background-color: #5555554f;
+                color: #ffffff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+
+            .copy-all-button:hover {
+                background-color: #ff4400;
+                box-shadow: 0 0 10px #ff4400;
+            }
+
+            .copy-all-button:active {
+                animation: buttonClickAnimation 0.3s;
+            }
+            
+            .preview {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .preview img {
+                max-width: 100%;
+                max-height: 200px;
+            }
+        </style>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/jquery.wysibb.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/wbbtheme.css" />
+        <script src="/assets/js/cn.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form">
+                <h1>创意工坊动态徽标生成器</h1>
+                <p>这个网站可以通过shields.io生成动态徽标，显示创意工坊物品的信息。</p>
+                <p>你可以复制其BBCode粘贴至创意工坊简介，或者用Markdown嵌入到你的博客里。</p>
+                <input type="text" class="input" id="inputText" placeholder="请输入创意工坊物品ID或URL">
+                <button class="button" onclick="generateURLs('bbcode')">生成BBCode</button>
+                <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
+                <div class="output" id="outputURLs"></div>
+            </div>
         </div>
-    </div>
-
-    <script>
-        function generateURLs(format) {
-            
-            var inputText = document.getElementById("inputText").value;
-
-            // 判断用户输入的是ID还是URL
-            var id;
-            if (/^\d+$/.test(inputText)) {
-            // 用户输入的是纯数字，表示ID
-            id = inputText;
-            } else if (inputText.startsWith("https://steamcommunity.com/sharedfiles/filedetails/?id=")) {
-            // 用户输入的是URL，提取其中的ID
-            id = inputText.replace("https://steamcommunity.com/sharedfiles/filedetails/?id=", "");
-            } else {
-            // 输入格式不正确，给出错误提示
-            alert("请填写正确的ID或URL！");
-            return;
-            }
-
-            var outputURLs = document.getElementById("outputURLs");
-            var subscriptions = `https://img.shields.io/steam/subscriptions/${id}?style=for-the-badge&label=订阅&color=b4e419`;
-            var downloads = `https://img.shields.io/steam/downloads/${id}?style=for-the-badge&label=下载&color=00adb5`;
-            var views = `https://img.shields.io/steam/views/${id}?style=for-the-badge&label=浏览量&color=ff5719`;
-            var size = `https://img.shields.io/steam/size/${id}?style=for-the-badge&label=模组大小&color=2ea043`;
-            var releasedate = `https://img.shields.io/steam/release-date/${id}?style=for-the-badge&label=发布日期&color=ffb300`;
-            var updatedate = `https://img.shields.io/steam/update-date/${id}?style=for-the-badge&label=更新日期&color=9999ff`;
-            
-            // 生成URLs
-            var url1 = format === "bbcode" ? `[img]${subscriptions}[/img]` : `![订阅](${subscriptions})`;
-            var url2 = format === "bbcode" ? `[img]${downloads}[/img]` : `![下载](${downloads})`;
-            var url3 = format === "bbcode" ? `[img]${views}[/img]` : `![浏览量](${views})`;
-            var url4 = format === "bbcode" ? `[img]${size}[/img]` : `![模组大小](${size})`;
-            var url5 = format === "bbcode" ? `[img]${releasedate}[/img]` : `![发布日期](${releasedate})`;
-            var url6 = format === "bbcode" ? `[img]${updatedate}[/img]` : `![更新日期](${updatedate})`;
-            
-            // 显示URLs
-            outputURLs.innerHTML = "";
-            
-            function createURLContainer(preview, url) {
-                var urlContainer = document.createElement("div");
-                urlContainer.className = "url-container";
+        <textarea id="editor"></textaera>
+        <script>
+            function generateURLs(format) {
                 
-                var previewElement = document.createElement("div");
-                previewElement.className = "preview";
-                var img = document.createElement("img");
-                img.src = preview;
-                previewElement.appendChild(img);
+                var inputText = document.getElementById("inputText").value;
+
+                // 判断用户输入的是ID还是URL
+                var id;
+                if (/^\d+$/.test(inputText)) {
+                // 用户输入的是纯数字，表示ID
+                id = inputText;
+                } else if (inputText.startsWith("https://steamcommunity.com/sharedfiles/filedetails/?id=")) {
+                // 用户输入的是URL，提取其中的ID
+                id = inputText.replace("https://steamcommunity.com/sharedfiles/filedetails/?id=", "");
+                } else {
+                // 输入格式不正确，给出错误提示
+                alert("请填写正确的ID或URL！");
+                return;
+                }
+
+                var outputURLs = document.getElementById("outputURLs");
+                var subscriptions = `https://img.shields.io/steam/subscriptions/${id}?style=for-the-badge&label=订阅&color=b4e419`;
+                var downloads = `https://img.shields.io/steam/downloads/${id}?style=for-the-badge&label=下载&color=00adb5`;
+                var views = `https://img.shields.io/steam/views/${id}?style=for-the-badge&label=浏览量&color=ff5719`;
+                var size = `https://img.shields.io/steam/size/${id}?style=for-the-badge&label=模组大小&color=2ea043`;
+                var releasedate = `https://img.shields.io/steam/release-date/${id}?style=for-the-badge&label=发布日期&color=ffb300`;
+                var updatedate = `https://img.shields.io/steam/update-date/${id}?style=for-the-badge&label=更新日期&color=9999ff`;
                 
-                var urlElement = document.createElement("div");
-                urlElement.className = "url";
-                urlElement.innerHTML = url;
+                // 生成URLs
+                var url1 = format === "bbcode" ? `[img]${subscriptions}[/img]` : `![订阅](${subscriptions})`;
+                var url2 = format === "bbcode" ? `[img]${downloads}[/img]` : `![下载](${downloads})`;
+                var url3 = format === "bbcode" ? `[img]${views}[/img]` : `![浏览量](${views})`;
+                var url4 = format === "bbcode" ? `[img]${size}[/img]` : `![模组大小](${size})`;
+                var url5 = format === "bbcode" ? `[img]${releasedate}[/img]` : `![发布日期](${releasedate})`;
+                var url6 = format === "bbcode" ? `[img]${updatedate}[/img]` : `![更新日期](${updatedate})`;
                 
-                var copyButton = document.createElement("button");
-                copyButton.className = "copy-button";
-                copyButton.innerHTML = "复制";
-                copyButton.addEventListener("click", function() {
-                    copyToClipboard(url);
+                // 显示URLs
+                outputURLs.innerHTML = "";
+                
+                function createURLContainer(preview, url) {
+                    var urlContainer = document.createElement("div");
+                    urlContainer.className = "url-container";
+                    
+                    var previewElement = document.createElement("div");
+                    previewElement.className = "preview";
+                    var img = document.createElement("img");
+                    img.src = preview;
+                    previewElement.appendChild(img);
+                    
+                    var urlElement = document.createElement("div");
+                    urlElement.className = "url";
+                    urlElement.innerHTML = url;
+                    
+                    var copyButton = document.createElement("button");
+                    copyButton.className = "copy-button";
+                    copyButton.innerHTML = "复制";
+                    copyButton.addEventListener("click", function() {
+                        copyToClipboard(url);
+                    });
+                    
+                    urlContainer.appendChild(previewElement);
+                    urlContainer.appendChild(urlElement);
+                    urlContainer.appendChild(copyButton);
+                    
+                    return urlContainer;
+                }
+                
+                var urlContainer1 = createURLContainer(subscriptions, url1);
+                var urlContainer2 = createURLContainer(downloads, url2);
+                var urlContainer3 = createURLContainer(views, url3);
+                var urlContainer4 = createURLContainer(size, url4);
+                var urlContainer5 = createURLContainer(releasedate, url5);
+                var urlContainer6 = createURLContainer(updatedate, url6);
+                var copyAllButton = document.createElement("button");
+                copyAllButton.className = "copy-all-button";
+                copyAllButton.innerHTML = "复制全部";
+                copyAllButton.addEventListener("click", function() {
+                    copyAllToClipboard();
                 });
                 
-                urlContainer.appendChild(previewElement);
-                urlContainer.appendChild(urlElement);
-                urlContainer.appendChild(copyButton);
-                
-                return urlContainer;
+                outputURLs.appendChild(copyAllButton);
+                outputURLs.appendChild(urlContainer1);
+                outputURLs.appendChild(urlContainer2);
+                outputURLs.appendChild(urlContainer3);
+                outputURLs.appendChild(urlContainer4);
+                outputURLs.appendChild(urlContainer5);
+                outputURLs.appendChild(urlContainer6);
             }
             
-            var urlContainer1 = createURLContainer(subscriptions, url1);
-            var urlContainer2 = createURLContainer(downloads, url2);
-            var urlContainer3 = createURLContainer(views, url3);
-            var urlContainer4 = createURLContainer(size, url4);
-            var urlContainer5 = createURLContainer(releasedate, url5);
-            var urlContainer6 = createURLContainer(updatedate, url6);
-            var copyAllButton = document.createElement("button");
-            copyAllButton.className = "copy-all-button";
-            copyAllButton.innerHTML = "复制全部";
-            copyAllButton.addEventListener("click", function() {
-                copyAllToClipboard();
-            });
-            
-            outputURLs.appendChild(copyAllButton);
-            outputURLs.appendChild(urlContainer1);
-            outputURLs.appendChild(urlContainer2);
-            outputURLs.appendChild(urlContainer3);
-            outputURLs.appendChild(urlContainer4);
-            outputURLs.appendChild(urlContainer5);
-            outputURLs.appendChild(urlContainer6);
-        }
-        
-        function copyToClipboard(text) {
-            var tempInput = document.createElement("input");
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("已复制到剪贴板！");
-        }
+            function copyToClipboard(text) {
+                var tempInput = document.createElement("input");
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("已复制到剪贴板！");
+            }
 
-        function copyAllToClipboard() {
-            var urls = document.querySelectorAll(".url");
-            var urlsText = "";
-            urls.forEach(function(url) {
-                urlsText += url.innerHTML.replace(/&amp;/g, "&") + "\n";
+            function copyAllToClipboard() {
+                var urls = document.querySelectorAll(".url");
+                var urlsText = "";
+                urls.forEach(function(url) {
+                    urlsText += url.innerHTML.replace(/&amp;/g, "&") + "\n";
+                });
+                var tempInput = document.createElement("textarea");
+                tempInput.value = urlsText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("已复制所有URL到剪贴板！");
+            }
+
+            $(document).ready(function() {
+            var wbbOpt = {
+                lang : 	 "cn",
+                buttons: "bold,italic,underline,|,img,link,|,code,quote"
+            }
+            $("#editor").wysibb(wbbOpt);
             });
-            var tempInput = document.createElement("textarea");
-            tempInput.value = urlsText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("已复制所有URL到剪贴板！");
-        }
-    </script>
-</body>
+
+        </script>
+    </body>
 </html>
