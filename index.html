@@ -3,6 +3,15 @@
     <head>
         <title>创意工坊徽标生成器</title>
         <link rel="shortcut icon" href="assets/favicon.svg" >
+        <link rel="stylesheet" href="minified/themes/obscurefreeman.css" id="theme-style" />
+
+        
+        <script src="minified/sceditor.min.js"></script>
+        <script src="languages/cn.js"></script>
+        <script src="minified/icons/monocons.js"></script>
+        <script src="minified/formats/bbcode.js"></script>
+        
+
         <style>
             
             :root {
@@ -34,6 +43,14 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
+                flex-direction: column;
+            }
+
+            .editorcontainer {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             
             .form {
@@ -178,23 +195,12 @@
                 max-width: 100%;
                 max-height: 200px;
             }
+
         </style>
-        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/jquery.min.js"></script>
-        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/jquery.wysibb.min.js"></script>
-        <link rel="stylesheet" href="https://obscurefreeman.github.io/workshop-badges-generator/assets/css/wbbtheme.css" />
-        <script src="https://obscurefreeman.github.io/workshop-badges-generator/assets/js/cn.js"></script>
-
-        <script>
-            $(document).ready(function() {
-            var wbbOpt = {
-                lang : 	 "cn",
-                buttons: "bold,italic,underline,|,img,link,|,code,quote"
-            }
-            $("#editor").wysibb(wbbOpt);
-            });
-        </script>
 
 
+
+    
     </head>
     <body>
         <div class="container">
@@ -206,9 +212,36 @@
                 <button class="button" onclick="generateURLs('bbcode')">生成BBCode</button>
                 <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
                 <div class="output" id="outputURLs"></div>
+                <div class="editorcontainer">
+                    <textarea id="example" style="height:300px;width:800px;">[center][size=3][b]BBCode SCEditor[/b][/size][/center]
+        
+        Give it a try! :)
+        
+        [color=#ff00]Red text! [/color][color=#3399ff]Blue?[/color]
+        
+        [ul][li]A simple list[/li][li]list item 2[/li][/ul]
+        
+        Just type [b]:[/b]) and it should be converted into :) as you type.</textarea>
+        
+                </div>
+                <div style="height: 50px;"></div> <!-- 调整所需的距离 -->
             </div>
         </div>
-        <textarea id="editor"></textaera>
+
+
+
+
+
+		<script>
+			var textarea = document.getElementById('example');
+			sceditor.create(textarea, {
+				format: 'bbcode',
+				icons: 'monocons',
+				style: 'minified/themes/content/default.css'
+			});
+		</script>
+
+
         <script>
             function generateURLs(format) {
                 
