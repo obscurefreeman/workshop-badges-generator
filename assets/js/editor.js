@@ -8,6 +8,7 @@ sceditor.create(textarea, {
     plugins: 'undo,plaintext,dragdrop,autoyoutube',
     pastetext: {
         addButton: true,
-        enabled: false // Set to true to start in enabled state
+        enabled: true, // Set to true to start in enabled state
     },
+    // resizeEnabled: false,
 });

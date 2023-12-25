@@ -4,9 +4,9 @@ sceditor.create(textarea, {
     format: 'bbcode',
     icons: 'monocons',
     style: 'minified/themes/content/obscurefreeman.css',
-    plugins: 'undo,plaintext,dragdrop,autoyoutube',
+    plugins: 'undo,plaintext,autoyoutube',
     pastetext: {
         addButton: true,
-        enabled: false // Set to true to start in enabled state
+        enabled: true, // Set to true to start in enabled state
     },
 });

@@ -27,12 +27,12 @@ a {
     color: #58DD93;
 }
 
-textarea,
-textarea *,
-textarea + label,
-textarea + label *,
-textarea ~ label,
-textarea ~ label * {
+#editor,
+#editor *,
+#editor + label,
+#editor + label *,
+#editor ~ label,
+#editor ~ label * {
     visibility: hidden;
     height: 800;
     width: 800;
