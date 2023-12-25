@@ -8,6 +8,6 @@ sceditor.create(textarea, {
     pastetext: {
         addButton: true,
         enabled: true, // Set to true to start in enabled state
-    width: '700px',
     },
+    width: '700px',
 });
