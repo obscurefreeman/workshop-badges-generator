@@ -1,5 +1,3 @@
-
-
 <p align="center">
     <h1 align="center">创意工坊徽标生成器</h1>
     <div align="center">
@@ -7,11 +5,8 @@
     <a href='https://discord.com/channels/806044973795246080'><img src="https://img.shields.io/discord/806044973795246080?style=for-the-badge&amp;logo=discord&amp;logoColor=fff&amp;label=Discord&amp;labelColor=515de9&amp;color=f2f2f2" referrerpolicy="no-referrer" alt="Image.png"></a>
     <a href='https://steamcommunity.com/id/obscurefreeman/'><img src="https://img.shields.io/badge/steam-065b8c?style=for-the-badge&amp;logo=steam" referrerpolicy="no-referrer" alt="Image.png"></a>
     </div>
-    <p align="center">简体中文|English</p>
+    <p align="center"><a href="README.md">简体中文</a> | <a href="README.md">English</a></p>
 </p>
-
-
-
 
 ## 马上使用
 
