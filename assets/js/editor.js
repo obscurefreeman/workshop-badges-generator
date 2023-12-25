@@ -11,4 +11,5 @@ sceditor.create(textarea, {
         enabled: true, // Set to true to start in enabled state
     },
     // resizeEnabled: false,
+    width: '700px',
 });
