@@ -38,6 +38,10 @@
                 color: #fff;
                 font-family: Arial, sans-serif;
             }
+
+            a {
+                color: #58DD93;
+            }
             
             .container {
                 /* display: flex; */
@@ -197,6 +201,62 @@
                 max-height: 200px;
             }
 
+            /* 社交媒体链接 */
+
+            #social-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                background-color: #5555554f;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 9999;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+            
+            #social-button:hover {
+                background-color: #4CAF50;
+                box-shadow: 0 0 20px #4CAF50;
+            }
+            
+            #social-button i {
+                margin-top: 2px;
+            }
+            
+            #social-links {
+                position: fixed;
+                bottom: 100px;
+                right: 20px;
+    /*             width: 200px; */
+                background-color: #5555554f;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                display: none;
+                padding: 10px;
+                z-index: 9999;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+            
+            #social-links a {
+                display: block;
+                margin-bottom: 10px;
+                color: #333;
+                text-decoration: none;
+            }
+
         </style>
 
 
@@ -207,18 +267,37 @@
         <div class="container">
             <div class="form">
                 <h1>创意工坊动态徽标生成器</h1>
-                <p>这个网站可以通过shields.io生成动态徽标，显示创意工坊物品的信息。</p>
+                <p>这个网站可以通过<a href="https://shields.io/">shields.io</a>一键生成各种徽标，动态显示创意工坊物品的信息。</p>
                 <p>你可以复制其BBCode粘贴至创意工坊简介，或者用Markdown嵌入到你的博客里。</p>
+                <p>想要生成更个性化的徽标 ，你可以在<a href="https://github.com/obscurefreeman/workshop-badges-generator">Github</a>上分叉这个项目，并部署你自己的。</p>
                 <input type="text" class="input" id="inputText" placeholder="请输入创意工坊物品ID或URL">
                 <button class="button" onclick="generateURLs('bbcode')">生成BBCode</button>
                 <button class="button" onclick="generateURLs('markdown')">生成Markdown</button>
                 <div class="output" id="outputURLs"></div>
                 <div class="editorcontainer">
-                    <textarea id="example" style="height:800px;width:800px;">[center][size=5][b]来试试吧！[/b][/size][/center]
+                    <textarea id="example" style="height:800px;width:800px;">[center][size=5][b]生成完毕？来试试吧！[/b][/size][/center]
 
-[center][img]https://img.shields.io/steam/subscriptions/3069601093?style=for-the-badge&label=订阅&color=b4e419[/img][img]https://img.shields.io/steam/downloads/3069601093?style=for-the-badge&label=下载&color=00adb5[/img][img]https://img.shields.io/steam/views/3069601093?style=for-the-badge&label=浏览量&color=ff5719[/img][img]https://img.shields.io/steam/size/3069601093?style=for-the-badge&label=模组大小&color=2ea043[/img][img]https://img.shields.io/steam/release-date/3069601093?style=for-the-badge&label=发布日期&color=ffb300[/img][img]https://img.shields.io/steam/update-date/3069601093?style=for-the-badge&label=更新日期&color=9999ff[/img][/center]</textarea>
+[center][img]https://img.shields.io/steam/subscriptions/3069601093?style=for-the-badge&label=订阅&color=b4e419[/img][img]https://img.shields.io/steam/downloads/3069601093?style=for-the-badge&label=下载&color=00adb5[/img][img]https://img.shields.io/steam/views/3069601093?style=for-the-badge&label=浏览量&color=ff5719[/img][img]https://img.shields.io/steam/size/3069601093?style=for-the-badge&label=模组大小&color=2ea043[/img][img]https://img.shields.io/steam/release-date/3069601093?style=for-the-badge&label=发布日期&color=ffb300[/img][img]https://img.shields.io/steam/update-date/3069601093?style=for-the-badge&label=更新日期&color=9999ff[/img][/center]
+[left][quote]将生成的BBCode代码粘贴至此编辑器内，可以预览徽章效果。点击工具栏中最后一个按钮可以查看源代码。不过请注意，编辑器中的所有语法并不都适用于Steam，比如说居中。[/quote]
+[/left]
+[left]    想和所有人分享这个工具？没问题！你可以把这个漂亮的徽章嵌入你的创意工坊简介，告诉别人你的徽章是怎么生成的。
+
+[center][url=https://obscurefreeman.github.io/workshop-badges-generator/][img]https://img.shields.io/badge/创意工坊-徽标生成器-335F4B?style=for-the-badge&logo=sourceengine[/img][/url][/center]
+[/left]
+[center][img]https://obscureimage.netlify.app/gif/demodance.gif[/img][/center]
+[center][img]https://bilistats.lonelyion.com/followers?uid=523837807&style=for-the-badge[/img][img]https://img.shields.io/discord/806044973795246080?style=for-the-badge&logo=discord&logoColor=fff&label=Discord&labelColor=515de9&color=f2f2f2[/img][img]https://img.shields.io/badge/steam-065b8c?style=for-the-badge&logo=steam[/img][/center]</textarea>
         
                 </div>
+                
+                <div id="social-button">
+                    <img src="assets/favicon.svg">
+                </div>
+                <div id="social-links">
+                    <a href="https://space.bilibili.com/523837807"><img src="https://bilistats.lonelyion.com/followers?uid=523837807&style=for-the-badge"></a>
+                    <a href="https://discord.com/channels/806044973795246080"><img src="https://img.shields.io/discord/806044973795246080?style=for-the-badge&logo=discord&logoColor=fff&label=Discord&labelColor=515de9&color=f2f2f2"></a>
+                    <a href="https://steamcommunity.com/id/obscurefreeman"><img src="https://img.shields.io/badge/steam-065b8c?style=for-the-badge&logo=steam"></a>
+                </div>
+
                 <div style="height: 50px;"></div> <!-- 调整所需的距离 -->
             </div>
         </div>
@@ -232,7 +311,9 @@
 			sceditor.create(textarea, {
 				format: 'bbcode',
 				icons: 'monocons',
-				style: 'minified/themes/content/obscurefreeman.css'
+				style: 'minified/themes/content/obscurefreeman.css',
+                locale: 'cn',
+                plugins: 'undo',
 			});
 		</script>
 
@@ -349,6 +430,15 @@
                 document.body.removeChild(tempInput);
                 alert("已复制所有URL到剪贴板！");
             }
+
+            // 社交媒体
+
+            var socialButton = document.getElementById('social-button');
+            var socialLinks = document.getElementById('social-links');
+            
+            socialButton.addEventListener('click', function() {
+                socialLinks.style.display = (socialLinks.style.display === 'block') ? 'none' : 'block';
+            });
 
         </script>
     </body>
