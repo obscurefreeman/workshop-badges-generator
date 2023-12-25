@@ -11,6 +11,16 @@
         <script src="minified/icons/monocons.js"></script>
         <script src="minified/formats/bbcode.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v6.5.1/js/all.js" ></script>
+        <script>
+        var textarea = document.getElementById('example');
+        sceditor.create(textarea, {
+            format: 'bbcode',
+            icons: 'monocons',
+            style: 'minified/themes/content/obscurefreeman.css',
+            locale: 'cn',
+            plugins: 'undo',
+        });
+        </script>
     </head>
     <body>
         <div class="container">
