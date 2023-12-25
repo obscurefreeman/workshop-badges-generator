@@ -27,6 +27,17 @@ a {
     color: #58DD93;
 }
 
+textarea,
+textarea *,
+textarea + label,
+textarea + label *,
+textarea ~ label,
+textarea ~ label * {
+    visibility: hidden;
+    height: 800;
+    width: 800;
+}
+
 .container {
     /* display: flex; */
     justify-content: center;
