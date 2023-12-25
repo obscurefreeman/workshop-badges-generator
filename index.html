@@ -10,7 +10,7 @@
         <script src="languages/cn.js"></script>
         <script src="minified/icons/monocons.js"></script>
         <script src="minified/formats/bbcode.js"></script>
-        
+        <script defer src="https://use.fontawesome.com/releases/v6.5.1/js/all.js" ></script>
 
         <style>
             
@@ -148,7 +148,6 @@
                 -webkit-backdrop-filter: blur(8px);
                 backdrop-filter: blur(8px);
                 box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-                cursor: pointer;
             }
 
             .copy-button:hover {
@@ -203,58 +202,98 @@
 
             /* 社交媒体链接 */
 
-            #social-button {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 60px;
-                height: 60px;
-                background-color: #5555554f;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                font-size: 30px;
+            .svg-inline--fa {
+                vertical-align: -0.200em;
+            }
+
+            .rounded-social-buttons {
+                text-align: center;
+            }
+
+            .rounded-social-buttons .social-button {
+                margin-top: 2rem;
+                display: inline-block;
+                position: relative;
                 cursor: pointer;
-                z-index: 9999;
-                -webkit-backdrop-filter: blur(8px);
-                backdrop-filter: blur(8px);
-                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-                cursor: pointer;
-            }
-            
-            #social-button:hover {
-                background-color: #4CAF50;
-                box-shadow: 0 0 20px #4CAF50;
-            }
-            
-            #social-button i {
-                margin-top: 2px;
-            }
-            
-            #social-links {
-                position: fixed;
-                bottom: 100px;
-                right: 20px;
-    /*             width: 200px; */
-                background-color: #5555554f;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-                display: none;
-                padding: 10px;
-                z-index: 9999;
-                -webkit-backdrop-filter: blur(8px);
-                backdrop-filter: blur(8px);
-                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
-                cursor: pointer;
-            }
-            
-            #social-links a {
-                display: block;
-                margin-bottom: 10px;
-                color: #333;
+                width: 3.125rem;
+                height: 3.125rem;
+                border: 0.125rem solid transparent;
+                padding: 0;
                 text-decoration: none;
+                text-align: center;
+                color: #fefefe5a;
+                font-size: 1.5625rem;
+                font-weight: normal;
+                line-height: 2em;
+                /* border: solid 2px #fefefe5a; */
+                border-radius: 1.6875rem;
+                transition: all 0.5s ease;
+                margin-right: 0.25rem;
+                margin-left: 0.25rem;
+                margin-bottom: 0.25rem;
+                background-color: #5555551e;
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+                -webkit-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                        transform: rotate(360deg);
+            }
+
+            .rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-bilibili, .fa-discord, .fa-steam {
+                font-size: 25px;
+            }
+
+            .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #5865F2;
+                box-shadow: 0 0 20px #5865F2;            
+            }
+
+            .rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #5865F2;
+                box-shadow: 0 0 20px #5865F2;
+            }
+
+            .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #5865F2;
+                box-shadow: 0 0 20px #5865F2;            
+            }
+
+            .rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #5865F2;
+                box-shadow: 0 0 20px #5865F2;             
+            }
+
+            .rounded-social-buttons .social-button.bilibili:hover, .rounded-social-buttons .social-button.bilibili:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #00A1D6;
+                box-shadow: 0 0 20px #00A1D6;               
+            }
+
+            .rounded-social-buttons .social-button.discord:hover, .rounded-social-buttons .social-button.discord:focus {
+                color: #ffffff;
+                /* border: none; */
+                background: #5865F2;
+                box-shadow: 0 0 20px #5865F2;
+            }
+
+            .rounded-social-buttons .social-button.steam:hover, .rounded-social-buttons .social-button.steam:focus {
+                color: #000000;
+                /* border: none; */
+                background: #ffffff;
+                box-shadow: 0 0 20px #ffffff;
             }
 
         </style>
@@ -288,15 +327,17 @@
 [center][img]https://bilistats.lonelyion.com/followers?uid=523837807&style=for-the-badge[/img][img]https://img.shields.io/discord/806044973795246080?style=for-the-badge&logo=discord&logoColor=fff&label=Discord&labelColor=515de9&color=f2f2f2[/img][img]https://img.shields.io/badge/steam-065b8c?style=for-the-badge&logo=steam[/img][/center]</textarea>
         
                 </div>
-                
-                <div id="social-button">
-                    <img src="assets/favicon.svg">
-                </div>
-                <div id="social-links">
-                    <a href="https://space.bilibili.com/523837807"><img src="https://bilistats.lonelyion.com/followers?uid=523837807&style=for-the-badge"></a>
-                    <a href="https://discord.com/channels/806044973795246080"><img src="https://img.shields.io/discord/806044973795246080?style=for-the-badge&logo=discord&logoColor=fff&label=Discord&labelColor=515de9&color=f2f2f2"></a>
-                    <a href="https://steamcommunity.com/id/obscurefreeman"><img src="https://img.shields.io/badge/steam-065b8c?style=for-the-badge&logo=steam"></a>
-                </div>
+                <footer>
+                    <div class="rounded-social-buttons">
+                        <!-- <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a class="social-button tiktok" href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a> -->
+                        <a class="social-button bilibili" href="https://space.bilibili.com/523837807" target="_blank"><i class="fab fa-bilibili"></i></a>
+                        <a class="social-button discord" href="https://discord.com/channels/806044973795246080" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a class="social-button steam" href="https://steamcommunity.com/id/obscurefreeman/" target="_blank"><i class="fab fa-steam"></i></a>
+                    </div>
+                  </footer>
 
                 <div style="height: 50px;"></div> <!-- 调整所需的距离 -->
             </div>
@@ -430,15 +471,6 @@
                 document.body.removeChild(tempInput);
                 alert("已复制所有URL到剪贴板！");
             }
-
-            // 社交媒体
-
-            var socialButton = document.getElementById('social-button');
-            var socialLinks = document.getElementById('social-links');
-            
-            socialButton.addEventListener('click', function() {
-                socialLinks.style.display = (socialLinks.style.display === 'block') ? 'none' : 'block';
-            });
 
         </script>
     </body>
