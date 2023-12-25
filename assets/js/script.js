@@ -1,12 +1,3 @@
-// 编辑器
-// var textarea = document.getElementById('example');
-// sceditor.create(textarea, {
-//     format: 'bbcode',
-//     icons: 'monocons',
-//     style: 'minified/themes/content/obscurefreeman.css',
-//     locale: 'cn',
-//     plugins: 'undo',
-// });
 // 主要代码
 function generateURLs(format) {
                 

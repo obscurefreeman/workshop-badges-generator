@@ -11,16 +11,6 @@
         <script src="minified/icons/monocons.js"></script>
         <script src="minified/formats/bbcode.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v6.5.1/js/all.js" ></script>
-        <script>
-        var textarea = document.getElementById('example');
-        sceditor.create(textarea, {
-            format: 'bbcode',
-            icons: 'monocons',
-            style: 'minified/themes/content/obscurefreeman.css',
-            // locale: 'cn',
-            plugins: 'undo',
-        });
-        </script>
     </head>
     <body>
         <div class="container">
@@ -35,7 +25,7 @@
                 <button class="button" onclick="generateURLs('markdown')">Generate Markdown</button>
                 <div class="output" id="outputURLs"></div>
                 <div class="editorcontainer">
-                    <textarea id="example" style="height:800px;width:800px;">[center][size=5][b]Try it now![/b][/size][/center]
+                    <textarea id="editor_en" style="height:800px;width:800px;">[center][size=5][b]Try it now![/b][/size][/center]
 
 [center][img]https://img.shields.io/steam/subscriptions/2927713362?style=for-the-badge&color=b4e419[/img][img]https://img.shields.io/steam/downloads/2927713362?style=for-the-badge&color=00adb5[/img][img]https://img.shields.io/steam/views/2927713362?style=for-the-badge&color=ff5719[/img][img]https://img.shields.io/steam/size/2927713362?style=for-the-badge&color=2ea043[/img][img]https://img.shields.io/steam/release-date/2927713362?style=for-the-badge&color=ffb300[/img][img]https://img.shields.io/steam/update-date/2927713362?style=for-the-badge&color=515de9[/img][/center]
 [left][quote]Paste the generated BBCode into this editor for preview. Click the last button in the toolbar to view the source code. Also, keep in mind that not all syntax in the editor applies to Steam, such as centering.[/quote]
@@ -65,5 +55,6 @@
         </div>
 
         <script src="assets/js/script_en.js"></script>
+        <script src="assets/js/editor.js"></script>
     </body>
 </html>
