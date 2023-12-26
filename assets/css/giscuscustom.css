@@ -73,11 +73,11 @@ main {
     --color-canvas-overlay: #5555554f;
     --color-canvas-inset: #5555554f;
     --color-canvas-subtle: #5555554f;
-    --color-border-default: #444c5670;
+    --color-border-default: #444c5600;
     --color-border-muted: #373e47;
     --color-neutral-muted: rgb(99 110 123 / 40%);
-    --color-accent-fg: #539bf5;
-    --color-accent-emphasis: #316dca;
+    --color-accent-fg: #58DD93d6;
+    --color-accent-emphasis: #439e6cd6;
     --color-accent-muted: rgb(65 132 228 / 40%);
     --color-accent-subtle: rgb(65 132 228 / 10%);
     --color-success-fg: #57ab5a;
