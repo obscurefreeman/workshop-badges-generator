@@ -38,6 +38,11 @@ a {
     width: 800;
 }
 
+.giscus-frame {
+    max-width: 700px !important;
+    width: 100% !important;
+}
+
 .container {
     /* display: flex; */
     justify-content: center;
