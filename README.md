@@ -2,7 +2,7 @@
     <h1 align="center">Workshop Badges Generator</h1>
     <div align="center">
     <a href='https://space.bilibili.com/523837807'><img src="https://bilistats.lonelyion.com/followers?uid=523837807&amp;style=for-the-badge" referrerpolicy="no-referrer" alt="Image.png"></a>
-    <a href='https://discord.com/channels/806044973795246080'><img src="https://img.shields.io/discord/806044973795246080?style=for-the-badge&amp;logo=discord&amp;logoColor=fff&amp;label=Discord&amp;labelColor=515de9&amp;color=f2f2f2" referrerpolicy="no-referrer" alt="Image.png"></a>
+    <a href='https://discord.gg/zbX7nQa8xF'><img src="https://img.shields.io/discord/806044973795246080?style=for-the-badge&amp;logo=discord&amp;logoColor=fff&amp;label=Discord&amp;labelColor=515de9&amp;color=f2f2f2" referrerpolicy="no-referrer" alt="Image.png"></a>
     <a href='https://steamcommunity.com/id/obscurefreeman/'><img src="https://img.shields.io/badge/steam-065b8c?style=for-the-badge&amp;logo=steam" referrerpolicy="no-referrer" alt="Image.png"></a>
     </div>
     <h2 align="center"><a href="README_zh.md">简体中文</a> | English</h2>
