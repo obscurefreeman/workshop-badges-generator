@@ -107,3 +107,6 @@ main .pagination-loader-container {
     display: none;
 } */
 
+main .gsc-loading-image {
+    background-image: url("https://obscurefreeman.github.io/workshop-badges-generator/assets/images/loading.gif");
+  }
